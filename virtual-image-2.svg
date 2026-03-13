@@ -221,26 +221,26 @@
   </g>
   <path
      style="fill:none;fill-opacity:0.929412;stroke:#ffff00;stroke-width:1.16562;stroke-opacity:0.929412"
-     d="M 340.0207,140.12072 94.672168,140.67538"
+     d="M 340.021,140.121 L 94.672,140.121"
      id="path62" />
   <path
      style="fill:none;fill-opacity:0.929412;stroke:#ffff00;stroke-width:1.42782;stroke-opacity:0.929412"
-     d="M 341.214,148.80136 92.97982,149.63587"
+     d="M 341.214,148.801 L 92.980,148.801"
      id="path63" />
   <path
      style="fill:none;fill-opacity:0.929412;stroke:#ffff00;stroke-width:1.41494;stroke-opacity:0.929412"
-     d="M 338.09594,156.45198 94.686345,155.61622"
+     d="M 338.096,156.452 L 94.686,156.452"
      id="path64" />
   <path
      style="fill:none;fill-opacity:0.929412;stroke:#ffff00;stroke-width:0.809029;stroke-opacity:0.929412"
-     d="m 337.73424,155.19325 179.55783,-9.10113"
+     d="M 337.734,156.452 L 517.290,148.801"
      id="path65" />
   <path
      style="fill:none;fill-opacity:0.929412;stroke:#ffff00;stroke-opacity:0.929412"
-     d="m 338.36109,138.56942 178.90653,7.66742"
+     d="M 338.361,140.121 L 517.290,148.801"
      id="path66" />
   <path
      style="fill:none;fill-opacity:0.929412;stroke:#ffff00;stroke-opacity:0.929412"
-     d="m 340.06497,148.79265 175.49878,-0.85194"
+     d="M 340.065,148.793 L 515.565,148.793"
      id="path67" />
 </svg>

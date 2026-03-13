@@ -1,0 +1,172 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\graphicspath{{./}}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{adjustbox}
+\title{Rapport TP2 : Lentilles minces convergentes}
+\author{Rong ZHOU}
+\newcommand{\univaddress}{3 Rue Augustin Fresnel, 57070 Metz}
+\date{\today}
+\newcommand{\contact}{ron@ronzz.org}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+  \small\univaddress{} \quad|\quad \contact
+\end{center}
+
+\section{Introduction}
+
+Ce TP a pour objectif de mesurer expérimentalement la distance focale d'une lentille optique convergente et d'explorer ses propriétés optiques pratiques, notamment dans la formation d'une image virtuelle/réelle réfléchie.
+
+\section{Montage expérimental}
+
+Pour ce TP, nous disposons d'un banc optique gradué (1), de trois porte-lentilles coulissants (2), d'une source lumineuse (3), d'un miroir (4), d'un verre quadrillé avec son support coulissant et son cadre d'écran de projection amovible (5), d'un écran de projection (6) et d'une lentille convergente supplémentaire (7), en plus de la lentille optique convergente (8) au centre de notre étude.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{guiderail-autocollimation-setup-crop.pdf}
+  \caption{Banc optique et montage d'autocollimation.}
+\end{figure}
+
+\section{Procédure expérimentale}
+
+\subsection{Estimation grossière (Autocollimation)}
+
+Nous commençons l'expérience par une estimation grossière de la distance focale en plaçant la lentille entre une source lumineuse éloignée et à motif (éclairage de salle avec grille) et un écran (une table blanche). Nous avons observé que le motif se met au point à environ 200\,mm, mesuré avec une règle.
+
+\subsection{Estimation affinée (Autocollimation)}
+
+Nous avons répété la méthode d'autocollimation avec notre banc optique. La lampe placée derrière le verre quadrillé sert de source lumineuse, tandis que l'écran fournit un motif identifiable. La lumière est convergée par la lentille convergente, réfléchie par le miroir, puis reconvergée pour former l'image sur l'écran attaché à la grille. Nous ajustons la grille jusqu'à obtenir une image nette.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{autocollimation-refined-crop.pdf}
+  \caption{Montage d'autocollimation affinée sur le banc optique.}
+\end{figure}
+
+Nous avons ainsi mesuré la distance focale de la lentille convergente, égale à la distance entre la grille et la lentille, soit 205\,mm.
+
+\subsection{Mesure avec précision améliorée}
+
+Avec la loi de Descartes :
+\[
+  \frac{1}{\overrightarrow{AO}} + \frac{1}{\overrightarrow{OA'}} = \frac{1}{\overrightarrow{OF'}}
+  \quad\Leftrightarrow\quad
+  \overrightarrow{OF'} = \frac{\overrightarrow{AO}\cdot\overrightarrow{OA'}}{\overrightarrow{AO}+\overrightarrow{OA'}},
+\]
+nous faisons varier expérimentalement la distance $\overrightarrow{AO}$ en déplaçant la grille, identifions $\overrightarrow{OA'}$ en déplaçant l'écran jusqu'à obtenir une image nette, et calculons mathématiquement la distance focale $f$ égale à $\overrightarrow{OF'}$.
+
+Pour maximiser la précision, nous répétons la mesure avec 10 valeurs différentes de $\overrightarrow{AO}$.
+
+\subsubsection{Mesure par image réelle}
+
+Nous configurons le montage comme suit :
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{real-image-crop.pdf}
+  \caption{Montage pour la mesure par conjugaison d'image réelle.}
+\end{figure}
+
+Ainsi, une image réelle est obtenue sur l'écran.
+
+\begin{table}[h]
+  \centering
+  \caption{Données de mesure par image réelle (distances en mm).}
+  \adjustbox{max width=\textwidth}{%
+  \begin{tabular}{lrrrrrrrrrr}
+    \toprule
+    $\overrightarrow{AO}$ (mesuré) & 400 & 450 & 500 & 550 & 600 & 650 & 700 & 750 & 800 & 850 \\
+    \midrule
+    $\overrightarrow{AA'}$ (mesuré) & 824 & 827 & 857 & 883 & 916 & 953 & 993 & 1033 & 1078 & 1125 \\
+    $\overrightarrow{OA'} = \overrightarrow{AA'} - \overrightarrow{AO}$ & 424 & 377 & 357 & 333 & 316 & 303 & 293 & 283 & 278 & 275 \\
+    $f = \overrightarrow{OF'} = \dfrac{\overrightarrow{AO} \cdot \overrightarrow{OA'}}{\overrightarrow{AO} + \overrightarrow{OA'}}$
+      & 205,825 & 205,139 & 208,285 & 207,418 & 206,987 & 206,663 & 206,546 & 205,470 & 206,308 & 207,778 \\
+    \bottomrule
+  \end{tabular}}
+\end{table}
+
+\subsubsection{Mesure par image virtuelle}
+
+Une image virtuelle ne pouvant pas être visualisée directement sur un écran, nous devons utiliser une seconde lentille convergente pour effectuer une mesure indirecte.
+
+En configurant le montage comme suit, nous ajustons la position de l'objet (grille) (A) à une valeur arbitraire légèrement inférieure à la distance focale (estimée à 205\,mm), puis nous ajustons la seconde lentille convergente jusqu'à obtenir une image nette de la grille sur l'écran.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{virtual-image-1-crop.pdf}
+  \caption{Montage pour la mesure par image virtuelle (étape 1 : avec les deux lentilles).}
+\end{figure}
+
+Ensuite, nous retirons la lentille à mesurer (« 1\textsuperscript{re} lentille ») et déplaçons le miroir jusqu'à obtenir une image nette.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{virtual-image-2-crop.pdf}
+  \caption{Montage pour la mesure par image virtuelle (étape 2 : 1\textsuperscript{re} lentille retirée).}
+\end{figure}
+
+La position du miroir correspond à la position de l'image virtuelle $A'$.
+
+Nous obtenons ainsi les résultats suivants, en mm :
+
+\begin{table}[h]
+  \centering
+  \caption{Données de mesure par image virtuelle (distances en mm).}
+  \adjustbox{max width=\textwidth}{%
+  \begin{tabular}{lrrrrrrrrrr}
+    \toprule
+    $A$ (lecture) & 213 & 212 & 189 & 200 & 160 & 185 & 200 & 210 & 195 & 205 \\
+    \midrule
+    $O$ (lecture) & 300 & 300 & 300 & 300 & 300 & 300 & 300 & 300 & 300 & 300 \\
+    $A'$ (lecture) & 146 & 140 & 46 & 110 & $-117$ & 39 & 104 & 141 & 103 & 132 \\
+    $\overrightarrow{AO} = O - A$ & 87 & 88 & 111 & 100 & 140 & 115 & 100 & 90 & 105 & 95 \\
+    $\overrightarrow{OA'} = O - A'$ & $-154$ & $-160$ & $-254$ & $-190$ & $-417$ & $-261$ & $-196$ & $-159$ & $-197$ & $-168$ \\
+    $f = \overrightarrow{OF'} = \dfrac{\overrightarrow{OA} \cdot \overrightarrow{OA'}}{\overrightarrow{OA} + \overrightarrow{OA'}}$
+      & 199,970 & 195,556 & 197,161 & 211,111 & 210,758 & 205,582 & 204,167 & 207,391 & 224,837 & 218,630 \\
+    \bottomrule
+  \end{tabular}}
+\end{table}
+
+\section{Analyse statistique}
+
+\subsection{Meilleure estimation de la valeur vraie}
+
+Avec 10 mesures de la même valeur, la valeur vraie est mieux estimée par la moyenne statistique :
+\[
+  \bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+\]
+Nous avons calculé $206{,}6$\,mm avec la méthode de l'image réelle, et $207{,}5$\,mm avec la méthode de l'image virtuelle.
+
+\subsection{Intervalle de confiance à 95\,\%}
+
+L'intervalle de confiance à 95\,\% de la valeur vraie peut être calculé mathématiquement comme suit :
+\[
+  \bar{x} \pm t_{95\%,\,df}\,\frac{s}{\sqrt{n}}
+\]
+Où $t$ est la valeur de confiance à 95\,\% selon la distribution de Student pour $n-1=9$ degrés de liberté, $s$ est l'écart type de l'échantillon calculé par
+\[
+  s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2}.
+\]
+Nous obtenons donc l'intervalle de confiance à 95\,\% de $206{,}7 \pm 0{,}7$\,mm pour la méthode de l'image réelle, et $207{,}5 \pm 6{,}6$\,mm pour la méthode de l'image virtuelle.
+
+\section{Interprétation des résultats}
+
+Les meilleures estimations de la distance focale obtenues par les méthodes d'autocollimation, d'image virtuelle et d'image réelle concordent. La méthode de l'image réelle a conduit à la meilleure précision globale, tandis que la méthode d'autocollimation a fourni une estimation rapide. La méthode de l'image virtuelle s'avère moins précise, car il est pratiquement difficile de manipuler la grille de façon à ce qu'elle corresponde exactement à la position de l'image virtuelle, du fait que l'image projetée sur l'écran est agrandie et qu'il est donc difficile de discerner si une bonne mise au point est obtenue.
+
+Nous décidons donc que la valeur obtenue par la méthode de conjugaison d'image réelle, $206{,}7 \pm 0{,}7$\,mm, doit être acceptée comme notre meilleure estimation de la distance focale.
+
+\section{Conclusion}
+
+Dans cette expérience, à l'aide d'un banc optique gradué et de divers équipements optiques, nous avons mesuré indirectement la distance focale d'une lentille convergente par trois méthodes : autocollimation, conjugaison d'image réelle et conjugaison d'image virtuelle. Notre meilleure estimation de la distance focale $f$ est $206{,}7$\,mm.
+
+\section*{Bibliographie}
+
+\end{document}
