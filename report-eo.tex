@@ -1,0 +1,173 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[esperanto]{babel}
+\usepackage{graphicx}
+\graphicspath{{./}}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{adjustbox}
+\usepackage{float}
+\title{Raporto TP2 : Konvergaj maldikaj optikaj lensoj}
+\author{Rong ZHOU}
+\newcommand{\univaddress}{3 Rue Augustin Fresnel, 57070 Metz}
+\date{\today}
+\newcommand{\contact}{ron@ronzz.org}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+  \small\univaddress{} \quad|\quad \contact
+\end{center}
+
+\section{Enkonduko}
+
+\^{C}i tiu TP celas eksperimente mezuri la fokaldistancon de konverga optika lenso kaj esplori \^{g}iajn praktikajn optikajn ecojn, precipe en la formi\^{g}o de virtuala/reala reflektita bildo.
+
+\section{Eksperimenta aran\^{g}o}
+
+Por \^{c}i tiu TP, ni disponas pri gradita optika benko (1), tri glidbrakaj lenshavoj (2), lumfonto (3), spegulo (4), kradita vitro kun glida tenilo kaj deta\^{c}ebla projekcioekrana kadro (5), projekcioekrano (6) kaj aldona konverga lenso (7), aldone al la konverga optika lenso (8) en la centro de nia studo.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{guiderail-autocollimation-setup-crop.pdf}
+  \caption{Optika benko kaj a\^{u}tokollimada aran\^{g}o.}
+\end{figure}
+
+\section{Eksperimenta proceduro}
+
+\subsection{Grosa takso (A\^{u}tokollimado)}
+
+Ni komencas la eksperimenton per grosa takso de la fokaldistanco, metante la lenson inter malproksiman, padronitan lumfonton ({\^c}amba lumigo kun krado) kaj ekranon (blanka tablo). Ni observis, ke la padrono atingas fokuson {\^c}irka{\^u} 200\,mm, mezurite per metro.
+
+\subsection{Rafinita takso (A\^{u}tokollimado)}
+
+Ni ripetis la a\^{u}tokollimadon per nia optika benko. La lampo malanta\^{u} la kradita vitro funkcias kiel lumfonto, dum la ekrano provizas identeblan padronon. La lumo estas konvergita per la konverga lenso, reflektita de la spegulo, tiam denove konvergita por formi la bildon sur la ekrano fiksita al la krado. Ni al\^{g}ustigas la kradon \^{g}is klara bildo estas akirita.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{autocollimation-refined-crop.pdf}
+  \caption{Rafinita a\^{u}tokollimada aran\^{g}o sur la optika benko.}
+\end{figure}
+
+Ni tiel mezuris la fokaldistancon de la konverga lenso, egalan al la distanco inter la krado kaj la lenso, je 205\,mm.
+
+\subsection{Mezurado kun plibonigita precizeco}
+
+Per la le\^{g}o de Descartes:
+\[
+  \frac{1}{\overrightarrow{AO}} + \frac{1}{\overrightarrow{OA'}} = \frac{1}{\overrightarrow{OF'}}
+  \quad\Leftrightarrow\quad
+  \overrightarrow{OF'} = \frac{\overrightarrow{AO}\cdot\overrightarrow{OA'}}{\overrightarrow{AO}+\overrightarrow{OA'}},
+\]
+ni eksperimente varigas la distancon $\overrightarrow{AO}$ movante la kradon, identigas $\overrightarrow{OA'}$ movante la ekranon \^{g}is akiro de klara bildo, kaj matematike kalkulas la fokaldistancon $f$ egalan al $\overrightarrow{OF'}$.
+
+Por maksimumigi precizecon, ni ripetas la mezuron kun 10 malsamaj $\overrightarrow{AO}$.
+
+\subsubsection{Mezurado per reala bildo}
+
+Unue, ni aran\^{g}as la aparaton jene:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{real-image-crop.pdf}
+  \caption{Aran\^{g}o por mezurado per reala bildokonjugacio.}
+\end{figure}
+
+Tiel, reala bildo estas akirita sur la ekrano.
+
+\begin{table}[h]
+  \centering
+  \caption{Datumoj de mezurado per reala bildo (distancoj en mm).}
+  \adjustbox{max width=\textwidth}{%
+  \begin{tabular}{lrrrrrrrrrr}
+    \toprule
+    $\overrightarrow{AO}$ (mezurita) & 400 & 450 & 500 & 550 & 600 & 650 & 700 & 750 & 800 & 850 \\
+    \midrule
+    $\overrightarrow{AA'}$ (mezurita) & 824 & 827 & 857 & 883 & 916 & 953 & 993 & 1033 & 1078 & 1125 \\
+    $\overrightarrow{OA'} = \overrightarrow{AA'} - \overrightarrow{AO}$ & 424 & 377 & 357 & 333 & 316 & 303 & 293 & 283 & 278 & 275 \\
+    $f = \overrightarrow{OF'} = \dfrac{\overrightarrow{AO} \cdot \overrightarrow{OA'}}{\overrightarrow{AO} + \overrightarrow{OA'}}$
+      & 205.825 & 205.139 & 208.285 & 207.418 & 206.987 & 206.663 & 206.546 & 205.470 & 206.308 & 207.778 \\
+    \bottomrule
+  \end{tabular}}
+\end{table}
+
+\subsubsection{Mezurado per virtuala bildo}
+
+\^{C}ar virtuala bildo ne povas esti rekte vidita per ekrano, ni devas uzi duan konvergan lenson por nerekta mezurado.
+
+Aran\^{g}ante jene, ni al\^{g}ustigas la pozicion de la objekto (krado) (A) al arbitra valoro iomete pli malgranda ol la fokaldistanco (taksita 205\,mm), tiam al\^{g}ustigas la duan konvergan lenson \^{g}is klara bildo de la krado estas akirita sur la ekrano.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{virtual-image-1-crop.pdf}
+  \caption{Aran\^{g}o por virtuala bildmezurado (pa\^{s}o 1: kun amba\^{u} lensoj).}
+\end{figure}
+
+Tiam ni forigas la konvergan lenson por mezurado (``1a lenso'') kaj movas la spegulon \^{g}is klara bildo estas akirita.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{virtual-image-2-crop.pdf}
+  \caption{Aran\^{g}o por virtuala bildmezurado (pa\^{s}o 2: 1a lenso forigita).}
+\end{figure}
+
+La pozicio de la spegulo estas la pozicio de la virtuala bildo $A'$.
+
+Ni tiel akiras la sekvajn rezultojn, en mm:
+
+\begin{table}[h]
+  \centering
+  \caption{Datumoj de mezurado per virtuala bildo (distancoj en mm).}
+  \adjustbox{max width=\textwidth}{%
+  \begin{tabular}{lrrrrrrrrrr}
+    \toprule
+    $A$ (legado) & 213 & 212 & 189 & 200 & 160 & 185 & 200 & 210 & 195 & 205 \\
+    \midrule
+    $O$ (legado) & 300 & 300 & 300 & 300 & 300 & 300 & 300 & 300 & 300 & 300 \\
+    $A'$ (legado) & 146 & 140 & 46 & 110 & $-117$ & 39 & 104 & 141 & 103 & 132 \\
+    $\overrightarrow{AO} = O - A$ & 87 & 88 & 111 & 100 & 140 & 115 & 100 & 90 & 105 & 95 \\
+    $\overrightarrow{OA'} = O - A'$ & $-154$ & $-160$ & $-254$ & $-190$ & $-417$ & $-261$ & $-196$ & $-159$ & $-197$ & $-168$ \\
+    $f = \overrightarrow{OF'} = \dfrac{\overrightarrow{OA} \cdot \overrightarrow{OA'}}{\overrightarrow{OA} + \overrightarrow{OA'}}$
+      & 199.970 & 195.556 & 197.161 & 211.111 & 210.758 & 205.582 & 204.167 & 207.391 & 224.837 & 218.630 \\
+    \bottomrule
+  \end{tabular}}
+\end{table}
+
+\section{Statistika analizo}
+
+\subsection{Plej bona takso de la vera valoro}
+
+Kun 10 mezuroj de la sama valoro, la vera valoro estas plej bone taksata per la statistika meznombro:
+\[
+  \bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+\]
+Kiun ni kalkulis esti 206.6\,mm per la reala bildometodo, kaj 207.5\,mm per la virtuala bildometodo.
+
+\subsection{95\%-a konfidintervalo}
+
+La 95\%-a konfidintervalo de la vera valoro povas esti matematike kalkulita jene:
+\[
+  \bar{x} \pm t_{95\%,\,df}\,\frac{s}{\sqrt{n}}
+\]
+Kie $t$ estas la 95\%-a konfidvaloro la\^{u} la distribuo de Student por $n-1=9$ gradoj de libereco, $s$ estas la norma devio de la specimeno kalkulita per
+\[
+  s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2}.
+\]
+Ni havas do la 95\%-an konfidintervalon de la vera valoro kalkulitan kiel $206.7 \pm 0.7$\,mm por la reala bildometodo, kaj $207.5 \pm 6.6$\,mm por la virtuala bildometodo.
+
+\section{Interpreto de rezultoj}
+
+La plej bonaj taksoj de la fokaldistanco akiritaj per la metodoj de a\^{u}tokollimado, virtuala bildo kaj reala bildo konkordas. La reala bildometodo kondukis al la plej bona \^{g}enerala precizeco, dum la a\^{u}tokollimada metodo donis rapidan takson. La virtuala bildometodo estas malpli preciza, \^{c}ar estas praktike malfacile manipuli la kradon tiel ke \^{g}i korespondas ekzakte al la pozicio de la virtuala bildo, pro tio ke la bildo projekciita sur la ekranon estas pligrandigita kaj estas do malfacile rimarki \^{c}u bona fokusado estas akirita.
+
+Ni tial decidas, ke la valoro akirita per la reala bildokonjugio-metodo, $206.7 \pm 0.7$\,mm, estu akceptita kiel nia plej bona takso de la vera fokaldistanco.
+
+\section{Konkludo}
+
+En \^{c}i tiu eksperimento, kun la helpo de gradita optika benko kaj diversaj optikaj ekipa\^{j}oj, ni nerekte mezuris la fokaldistancon de konverga lenso per tri metodoj: a\^{u}tokollimado, konjugacio de reala bildo, kaj konjugacio de virtuala bildo. Nia plej bona takso de la fokaldistanco $f$ estas $206.7$\,mm.
+
+\section*{Bibliografio}
+
+\end{document}
