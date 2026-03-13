@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 260" width="820" height="260">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#333"/>
+    </marker>
+    <marker id="arr-y" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#d4a000"/>
+    </marker>
+    <marker id="dim-s" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#555"/>
+    </marker>
+    <marker id="dim-e" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#555"/>
+    </marker>
+    <!-- Gradient for light beam -->
+    <linearGradient id="beamGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#f0c000" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#f0c000" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- White background -->
+  <rect width="820" height="260" fill="white"/>
+
+  <!-- ===== OPTICAL BENCH ===== -->
+  <!-- Bench rail (double line) -->
+  <rect x="30" y="178" width="760" height="10" rx="2" fill="#ccc" stroke="#999" stroke-width="1"/>
+  <rect x="30" y="186" width="760" height="4"  rx="1" fill="#bbb" stroke="none"/>
+
+  <!-- Graduations on bench (every 50 px ≈ 5 cm) -->
+  <g stroke="#888" stroke-width="0.8">
+    <line x1="130" y1="178" x2="130" y2="171"/>
+    <line x1="230" y1="178" x2="230" y2="171"/>
+    <line x1="330" y1="178" x2="330" y2="171"/>
+    <line x1="430" y1="178" x2="430" y2="171"/>
+    <line x1="530" y1="178" x2="530" y2="171"/>
+    <line x1="630" y1="178" x2="630" y2="171"/>
+    <line x1="730" y1="178" x2="730" y2="171"/>
+  </g>
+
+  <!-- ===== OPTICAL AXIS ===== -->
+  <line x1="50" y1="145" x2="785" y2="145"
+        stroke="#999" stroke-width="1" stroke-dasharray="8,5"
+        marker-end="url(#arr)"/>
+
+  <!-- ===== LIGHT SOURCE ===== -->
+  <!-- Housing (box) -->
+  <rect x="32" y="110" width="60" height="70" rx="4"
+        fill="#e8e8e8" stroke="#555" stroke-width="1.5"/>
+  <!-- Filament symbol -->
+  <path d="M 62,125 Q 68,132 62,139 Q 56,146 62,153"
+        fill="none" stroke="#ff8800" stroke-width="2"/>
+  <!-- Aperture slit -->
+  <rect x="90" y="130" width="4" height="30" fill="#333"/>
+  <!-- "S" label -->
+  <text x="58" y="105" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">source</text>
+
+  <!-- ===== OBJECT SLIDE ===== -->
+  <!-- Slide holder -->
+  <rect x="192" y="120" width="8" height="50" rx="2"
+        fill="#aaa" stroke="#666" stroke-width="1"/>
+  <!-- Object arrow on slide -->
+  <line x1="196" y1="145" x2="196" y2="112"
+        stroke="#333" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="196" y="108" font-family="serif" font-style="italic" font-size="14"
+        fill="#333" text-anchor="middle">A</text>
+  <text x="196" y="200" font-family="sans-serif" font-size="11" fill="#555" text-anchor="middle">objet</text>
+
+  <!-- ===== LIGHT BEAM (yellow, diverging from source then converging to screen) ===== -->
+  <!-- Diverging cone from source aperture to lens -->
+  <polygon points="94,130 340,120 340,170 94,160"
+           fill="url(#beamGrad)" opacity="0.55"/>
+  <!-- Converging cone from lens to screen -->
+  <polygon points="340,120 620,140 620,150 340,170"
+           fill="url(#beamGrad)" opacity="0.55"/>
+
+  <!-- ===== CONVERGING LENS ===== -->
+  <!-- Lens holder post -->
+  <rect x="337" y="170" width="6" height="20" fill="#aaa" stroke="#666" stroke-width="1"/>
+  <!-- Lens shape (biconvex) -->
+  <path d="M 340,100 C 320,122 320,168 340,190
+           C 360,168 360,122 340,100 Z"
+        fill="rgba(100,160,220,0.3)" stroke="#2266cc" stroke-width="2"/>
+  <!-- Lens axis line -->
+  <line x1="340" y1="95"  x2="340" y2="195" stroke="#2266cc" stroke-width="1.5"/>
+  <!-- Tick marks at lens edges -->
+  <line x1="334" y1="100" x2="346" y2="100" stroke="#2266cc" stroke-width="1.5"/>
+  <line x1="334" y1="190" x2="346" y2="190" stroke="#2266cc" stroke-width="1.5"/>
+  <text x="340" y="215" font-family="sans-serif" font-size="11" fill="#2266cc" text-anchor="middle">lentille</text>
+
+  <!-- ===== FOCAL POINT F' on bench ===== -->
+  <circle cx="460" cy="145" r="3.5" fill="#228833"/>
+  <line x1="460" y1="139" x2="460" y2="151" stroke="#228833" stroke-width="1.5"/>
+  <text x="460" y="165" font-family="serif" font-style="italic" font-size="13"
+        fill="#228833" text-anchor="middle">F′</text>
+
+  <!-- ===== SCREEN ===== -->
+  <!-- Screen holder post -->
+  <rect x="617" y="170" width="6" height="20" fill="#aaa" stroke="#666" stroke-width="1"/>
+  <!-- Screen surface -->
+  <rect x="616" y="100" width="8" height="70" rx="1"
+        fill="#fff8e0" stroke="#cc8800" stroke-width="2"/>
+  <!-- Image arrow on screen (inverted) -->
+  <line x1="620" y1="145" x2="620" y2="168"
+        stroke="#333" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="620" y="184" font-family="serif" font-style="italic" font-size="14"
+        fill="#333" text-anchor="middle">A′</text>
+  <text x="620" y="200" font-family="sans-serif" font-size="11" fill="#555" text-anchor="middle">écran</text>
+
+  <!-- ===== DIMENSION LINES ===== -->
+  <!-- p = object–lens distance (OA) -->
+  <line x1="196" y1="226" x2="340" y2="226"
+        stroke="#555" stroke-width="1.2"
+        marker-start="url(#dim-s)" marker-end="url(#dim-e)"/>
+  <line x1="196" y1="202" x2="196" y2="230" stroke="#555" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <line x1="340" y1="202" x2="340" y2="230" stroke="#555" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="268" y="242" font-family="serif" font-style="italic" font-size="13"
+        fill="#555" text-anchor="middle">p (= −OA)</text>
+
+  <!-- p' = lens–screen distance (OA') -->
+  <line x1="340" y1="226" x2="620" y2="226"
+        stroke="#555" stroke-width="1.2"
+        marker-start="url(#dim-s)" marker-end="url(#dim-e)"/>
+  <line x1="620" y1="202" x2="620" y2="230" stroke="#555" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="480" y="242" font-family="serif" font-style="italic" font-size="13"
+        fill="#555" text-anchor="middle">p′ (= OA′)</text>
+
+  <!-- Title -->
+  <text x="410" y="20" font-family="sans-serif" font-size="14" fill="#444"
+        text-anchor="middle" font-weight="bold">
+    Optical bench setup — converging lens experiment
+  </text>
+
+  <!-- Component labels on bench -->
+  <text x="62"  y="196" font-family="sans-serif" font-size="10" fill="#777" text-anchor="middle">S</text>
+  <text x="340" y="196" font-family="sans-serif" font-size="10" fill="#777" text-anchor="middle">L</text>
+  <text x="620" y="196" font-family="sans-serif" font-size="10" fill="#777" text-anchor="middle">E</text>
+</svg>

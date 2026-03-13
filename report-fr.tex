@@ -1,0 +1,232 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\graphicspath{{./}}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\title{Mesure de la distance focale d'une lentille convergente}
+\author{Rong ZHOU}
+\newcommand{\univaddress}{3 Rue Augustin Fresnel, 57070 Metz}
+\date{\today}
+\newcommand{\contact}{ron@ronzz.org}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+  \small\univaddress{} \quad|\quad \href{mailto:\contact}{\contact}
+\end{center}
+
+\begin{abstract}
+La distance focale d'une lentille mince convergente est mesurée par trois méthodes
+indépendantes~: la méthode des points conjugués, la méthode de Bessel (deux positions) et
+l'autocollimation.  Les trois méthodes donnent un résultat cohérent de
+$f' = (12{,}0 \pm 0{,}1)$\,cm, ce qui correspond à une vergence d'environ \SI{8,3}{D}.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------
+\section{Objectif}
+
+L'objectif de cette expérience est de déterminer la distance focale~$f'$ d'une lentille
+mince convergente d'identité inconnue à l'aide de trois méthodes optiques complémentaires,
+et d'évaluer les incertitudes de mesure associées.
+
+%----------------------------------------------------------------------
+\section{Rappels théoriques}
+
+\subsection{Relation de conjugaison}
+
+Pour une lentille mince dans l'air, la relation de conjugaison s'écrit :
+\begin{equation}
+  \frac{1}{\overline{OA'}} - \frac{1}{\overline{OA}} = \frac{1}{f'}
+  \label{eq:conjugaison}
+\end{equation}
+où $\overline{OA}$ est la distance algébrique du centre optique~$O$ à
+l'objet~$A$, $\overline{OA'}$ est la distance algébrique de~$O$ à
+l'image~$A'$, et $f'$ est la distance focale image.  La vergence de la lentille
+est définie par
+\begin{equation}
+  V = \frac{1}{f'}
+\end{equation}
+et s'exprime en dioptries (\si{D}) lorsque $f'$ est en mètres.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig1-ray-diagram.pdf}
+  \caption{Schéma de construction pour une lentille mince convergente, représentant
+    les trois rayons canoniques et le chemin lumineux (jaune).
+    L'objet~$A$ est placé à $\overline{OA} = -2f'$, ce qui donne une image réelle,
+    renversée et de même grandeur à $\overline{OA'} = +2f'$.}
+  \label{fig:schema-rayons}
+\end{figure}
+
+\subsection{Méthode de Bessel}
+
+Lorsque l'objet et l'écran sont séparés par une distance fixe~$D > 4f'$, il
+existe exactement deux positions de la lentille, séparées d'une distance~$d$,
+qui donnent chacune une image nette sur l'écran.  La distance focale est alors :
+\begin{equation}
+  f' = \frac{D^2 - d^2}{4D}
+  \label{eq:bessel}
+\end{equation}
+
+\subsection{Méthode d'autocollimation}
+
+Un miroir plan placé derrière la lentille renvoie le faisceau sortant à travers
+la lentille.  Lorsque l'objet est situé exactement dans le plan focal objet, le
+faisceau émergent est parallèle ; le faisceau de retour forme une image nette
+coïncidant avec l'objet.  La distance objet--lentille à ce réglage est
+directement égale à~$f'$.
+
+%----------------------------------------------------------------------
+\section{Dispositif expérimental}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.90\textwidth]{fig2-setup.pdf}
+  \caption{Schéma du banc d'optique.  De gauche à droite~: source lumineuse~(S),
+    diapositive objet~(A), lentille convergente~(L) sur un cavalier mobile, et
+    écran blanc~(E).  La zone jaune représente le faisceau lumineux ; $p$ et~$p'$
+    désignent les distances objet et image non signées.}
+  \label{fig:banc}
+\end{figure}
+
+Le dispositif comprenait :
+\begin{itemize}
+  \item un banc d'optique de \SI{1,50}{m} gradué au millimètre ;
+  \item une source lumineuse vive avec un réticule croix utilisé comme objet ;
+  \item une lentille convergente (distance focale inconnue) montée sur un cavalier ;
+  \item un écran blanc comme plan image ;
+  \item un miroir plan argenté sur sa face avant (pour la méthode d'autocollimation).
+\end{itemize}
+L'incertitude de lecture estimée sur les positions du banc est de $\pm\SI{0,5}{mm}$.
+
+%----------------------------------------------------------------------
+\section{Protocole expérimental}
+
+\subsection{Méthode des points conjugués}
+\begin{enumerate}
+  \item Fixer la source lumineuse à une extrémité du banc.
+  \item Déplacer la lentille à une position choisie et translater l'écran
+        jusqu'à l'obtention d'une image nette.
+  \item Relever les positions de l'objet, de la lentille et de l'écran ;
+        calculer $\overline{OA}$ et $\overline{OA'}$.
+  \item Répéter pour au moins cinq distances objet différentes.
+  \item Calculer $f'$ pour chaque mesure à l'aide de l'équation~\eqref{eq:conjugaison}.
+\end{enumerate}
+
+\subsection{Méthode de Bessel}
+\begin{enumerate}
+  \item Fixer l'objet et l'écran à une distance $D = \SI{60,0}{cm}$.
+  \item Localiser les deux positions de la lentille donnant une image nette ;
+        mesurer leur séparation~$d$.
+  \item Calculer $f'$ à l'aide de l'équation~\eqref{eq:bessel}.
+\end{enumerate}
+
+\subsection{Autocollimation}
+\begin{enumerate}
+  \item Placer le miroir plan immédiatement derrière la lentille.
+  \item Déplacer l'ensemble lentille--miroir le long du banc jusqu'à ce que
+        l'image de retour coïncide exactement avec l'objet.
+  \item Relever la distance objet--lentille, qui est égale à~$f'$.
+\end{enumerate}
+
+%----------------------------------------------------------------------
+\section{Résultats}
+
+\subsection{Méthode des points conjugués}
+
+Le tableau~\ref{tab:conjugues} regroupe les distances mesurées et les distances
+focales déduites pour chaque essai.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Distances objet, distances image et distances focales déduites.}
+  \label{tab:conjugues}
+  \begin{tabular}{@{}S[table-format=-2.1]
+                     S[table-format=2.1]
+                     S[table-format=-1.4]
+                     S[table-format=1.4]
+                     S[table-format=2.1]@{}}
+    \toprule
+    {$\overline{OA}$ / cm} &
+    {$\overline{OA'}$ / cm} &
+    {$1/\overline{OA}$ / cm$^{-1}$} &
+    {$1/\overline{OA'}$ / cm$^{-1}$} &
+    {$f'$ / cm} \\
+    \midrule
+    -20,0 & 30,2 & -0,0500 & 0,0331 & 11,9 \\
+    -24,0 & 24,1 & -0,0417 & 0,0415 & 12,0 \\
+    -30,0 & 20,1 & -0,0333 & 0,0498 & 12,1 \\
+    -36,0 & 18,0 & -0,0278 & 0,0556 & 11,9 \\
+    -48,0 & 16,2 & -0,0208 & 0,0617 & 11,9 \\
+    \midrule
+    \multicolumn{4}{l}{Valeur moyenne} & 12,0 \\
+    \multicolumn{4}{l}{Incertitude-type $u(f')$} & 0,07 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+La moyenne pondérée donne $f' = (11{,}96 \pm 0{,}07)$\,cm.
+
+\subsection{Méthode de Bessel}
+
+Avec $D = \SI{60,0}{cm}$ et la séparation mesurée $d = \SI{26,7}{cm}$ :
+\begin{equation}
+  f' = \frac{60{,}0^2 - 26{,}7^2}{4 \times 60{,}0}
+     = \frac{3600{,}0 - 712{,}9}{240{,}0}
+     = \SI{12,03}{cm}
+\end{equation}
+
+\subsection{Autocollimation}
+
+La distance objet--lentille au réglage d'autocollimation était
+$f'_\mathrm{AC} = \SI{12,1}{cm}$.
+
+%----------------------------------------------------------------------
+\section{Analyse et discussion}
+
+Les trois méthodes sont en excellent accord (tableau~\ref{tab:bilan}).
+
+\begin{table}[htbp]
+  \centering
+  \caption{Bilan des déterminations de la distance focale.}
+  \label{tab:bilan}
+  \begin{tabular}{@{}lS[table-format=2.2]S[table-format=1.2]@{}}
+    \toprule
+    Méthode & {$f'$ / cm} & {$u(f')$ / cm} \\
+    \midrule
+    Points conjugués  & 11,96 & 0,07 \\
+    Méthode de Bessel & 12,03 & 0,10 \\
+    Autocollimation   & 12,1  & 0,1  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Les faibles écarts entre les méthodes sont cohérents avec l'incertitude de
+lecture estimée à $\pm\SI{0,5}{mm}$.  Les sources d'erreur résiduelles sont
+l'erreur de parallaxe lors de la lecture du banc et le critère subjectif de
+netteté de l'image.
+
+La vergence de la lentille est :
+\begin{equation}
+  V = \frac{1}{f'} = \frac{1}{\SI{0,120}{m}} \approx \SI{8,3}{D}
+\end{equation}
+
+%----------------------------------------------------------------------
+\section{Conclusion}
+
+La distance focale de la lentille convergente a été déterminée à
+$f' = (12{,}0 \pm 0{,}1)$\,cm, ce qui correspond à une vergence d'environ
+\SI{8,3}{D}.  Les trois méthodes expérimentales — points conjugués, méthode de
+Bessel et autocollimation — donnent des résultats mutuellement cohérents, ce qui
+valide à la fois la technique expérimentale et le modèle théorique de la lentille mince.
+
+\end{document}

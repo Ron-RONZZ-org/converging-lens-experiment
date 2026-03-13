@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="800" height="380">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#333"/>
+    </marker>
+    <marker id="arr-axis" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2266cc"/>
+    </marker>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#cc3333"/>
+    </marker>
+    <marker id="arr-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#228833"/>
+    </marker>
+    <marker id="arr-yellow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#d4a000"/>
+    </marker>
+    <marker id="arr-obj" markerWidth="8" markerHeight="6" refX="4" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#333"/>
+    </marker>
+    <!-- Double-headed arrow for dimension lines -->
+    <marker id="dim-start" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#228833"/>
+    </marker>
+    <marker id="dim-end" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#228833"/>
+    </marker>
+  </defs>
+
+  <!-- White background -->
+  <rect width="800" height="380" fill="white"/>
+
+  <!-- ===== OPTICAL AXIS ===== -->
+  <!-- Dashed axis line -->
+  <line x1="30" y1="190" x2="765" y2="190"
+        stroke="#888" stroke-width="1.2" stroke-dasharray="9,5"
+        marker-end="url(#arr-axis)"/>
+
+  <!-- ===== LENS ===== -->
+  <!-- Biconvex lens shape (centred at x=350, y=190) -->
+  <!-- Left arc: bulges left -->
+  <path d="M 350,75 C 330,120 330,260 350,305" fill="none" stroke="#2266cc" stroke-width="2"/>
+  <!-- Right arc: bulges right -->
+  <path d="M 350,75 C 370,120 370,260 350,305" fill="none" stroke="#2266cc" stroke-width="2"/>
+  <!-- Fill the lens shape -->
+  <path d="M 350,75 C 370,120 370,260 350,305 C 330,260 330,120 350,75 Z"
+        fill="rgba(100,160,220,0.18)" stroke="none"/>
+  <!-- Vertical lens axis marker -->
+  <line x1="350" y1="68" x2="350" y2="312"
+        stroke="#2266cc" stroke-width="1.5"/>
+  <!-- Tick marks at top and bottom of lens -->
+  <line x1="344" y1="75"  x2="356" y2="75"  stroke="#2266cc" stroke-width="1.5"/>
+  <line x1="344" y1="305" x2="356" y2="305" stroke="#2266cc" stroke-width="1.5"/>
+
+  <!-- ===== FOCAL POINTS ===== -->
+  <!-- F  (front focal point) x=230 -->
+  <circle cx="230" cy="190" r="4" fill="#228833"/>
+  <line x1="230" y1="184" x2="230" y2="196" stroke="#228833" stroke-width="1.5"/>
+  <!-- F' (rear  focal point) x=470 -->
+  <circle cx="470" cy="190" r="4" fill="#228833"/>
+  <line x1="470" y1="184" x2="470" y2="196" stroke="#228833" stroke-width="1.5"/>
+
+  <!-- ===== OBJECT (upward arrow, x=110) ===== -->
+  <!-- Object baseline on axis -->
+  <circle cx="110" cy="190" r="3" fill="#333"/>
+  <!-- Object arrow: from (110,190) up to (110,130) -->
+  <line x1="110" y1="190" x2="110" y2="135"
+        stroke="#333" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- ===== IMAGE (downward arrow, x=590) ===== -->
+  <!-- Image baseline on axis -->
+  <circle cx="590" cy="190" r="3" fill="#333"/>
+  <!-- Image arrow: from (590,190) down to (590,250) – inverted -->
+  <line x1="590" y1="190" x2="590" y2="245"
+        stroke="#333" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- ===== RAY 1 – parallel to axis, refracts through F' ===== -->
+  <!-- Geometry: object top (110,130), hits lens at (350,130),
+       then through F'(470,190); slope after = (190-130)/120 = 0.5
+       at x=590: y = 190 + (590-470)×0.5 = 190+60 = 250  ✓ -->
+  <!-- Incident segment -->
+  <line x1="110" y1="130" x2="348" y2="130"
+        stroke="#2266cc" stroke-width="1.8"
+        marker-end="url(#arr-blue)"/>
+  <!-- Refracted segment -->
+  <line x1="350" y1="130" x2="588" y2="250"
+        stroke="#2266cc" stroke-width="1.8"
+        marker-end="url(#arr-blue)"/>
+
+  <!-- ===== RAY 2 – through centre O (undeviated) ===== -->
+  <!-- Geometry: (110,130) → (350,190) → (590,250)
+       slope = (190-130)/(350-110) = 60/240 = 0.25
+       at x=590: y = 190 + 240×0.25 = 190+60 = 250  ✓ -->
+  <line x1="110" y1="130" x2="588" y2="250"
+        stroke="#cc3333" stroke-width="1.8"
+        marker-end="url(#arr-red)"/>
+
+  <!-- ===== RAY 3 – through F, emerges parallel ===== -->
+  <!-- Geometry: slope from (110,130) through F(230,190) = 60/120 = 0.5
+       At lens x=350: y = 190 + (350-230)×0.5 = 190+60 = 250
+       After lens: horizontal at y=250 to image at (590,250) ✓ -->
+  <!-- Incident segment (from object top through F to lens) -->
+  <line x1="110" y1="130" x2="348" y2="250"
+        stroke="#228833" stroke-width="1.8"
+        marker-end="url(#arr-green)"/>
+  <!-- Refracted segment (horizontal) -->
+  <line x1="350" y1="250" x2="588" y2="250"
+        stroke="#228833" stroke-width="1.8"
+        marker-end="url(#arr-green)"/>
+
+  <!-- ===== YELLOW OPTICAL LIGHT PATH (chief / paraxial ray) ===== -->
+  <!-- Central (chief) ray from object top through lens centre to image,
+       representing the actual luminous path of the beam axis.
+       Passes exactly through O=(350,190) without deviation. -->
+  <line x1="110" y1="130" x2="350" y2="190"
+        stroke="#f0c000" stroke-width="3.5" opacity="0.85"/>
+  <line x1="350" y1="190" x2="590" y2="250"
+        stroke="#f0c000" stroke-width="3.5" opacity="0.85"
+        marker-end="url(#arr-yellow)"/>
+
+  <!-- ===== DIMENSION LINES for f' ===== -->
+  <!-- Front focal length: O (350) to F (230) -->
+  <line x1="350" y1="322" x2="230" y2="322"
+        stroke="#228833" stroke-width="1.2"
+        marker-start="url(#dim-start)" marker-end="url(#dim-end)"/>
+  <line x1="350" y1="307" x2="350" y2="327" stroke="#228833" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="230" y1="307" x2="230" y2="327" stroke="#228833" stroke-width="1" stroke-dasharray="3,2"/>
+  <!-- Rear focal length: O (350) to F' (470) -->
+  <line x1="350" y1="322" x2="470" y2="322"
+        stroke="#228833" stroke-width="1.2"
+        marker-start="url(#dim-start)" marker-end="url(#dim-end)"/>
+  <line x1="470" y1="307" x2="470" y2="327" stroke="#228833" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- ===== LABELS ===== -->
+  <!-- Object label -->
+  <text x="78" y="128" font-family="serif" font-style="italic" font-size="15" fill="#333">A</text>
+  <!-- Image label -->
+  <text x="596" y="255" font-family="serif" font-style="italic" font-size="15" fill="#333">A′</text>
+  <!-- O (lens centre) -->
+  <text x="356" y="208" font-family="serif" font-style="italic" font-size="16" fill="#2266cc">O</text>
+  <!-- F (front focal point) -->
+  <text x="216" y="210" font-family="serif" font-style="italic" font-size="15" fill="#228833">F</text>
+  <!-- F' (rear focal point) -->
+  <text x="476" y="210" font-family="serif" font-style="italic" font-size="15" fill="#228833">F′</text>
+  <!-- f' dimension label (front) -->
+  <text x="277" y="338" font-family="serif" font-style="italic" font-size="14" fill="#228833">f′</text>
+  <!-- f' dimension label (rear) -->
+  <text x="402" y="338" font-family="serif" font-style="italic" font-size="14" fill="#228833">f′</text>
+  <!-- Ray labels (legend) -->
+  <rect x="590" y="50" width="200" height="95" rx="5" fill="white" stroke="#ccc" stroke-width="1"/>
+  <line x1="600" y1="70" x2="630" y2="70" stroke="#2266cc" stroke-width="1.8"/>
+  <text x="636" y="74" font-family="sans-serif" font-size="12" fill="#2266cc">Parallel → F′</text>
+  <line x1="600" y1="90" x2="630" y2="90" stroke="#cc3333" stroke-width="1.8"/>
+  <text x="636" y="94" font-family="sans-serif" font-size="12" fill="#cc3333">Through O</text>
+  <line x1="600" y1="110" x2="630" y2="110" stroke="#228833" stroke-width="1.8"/>
+  <text x="636" y="114" font-family="sans-serif" font-size="12" fill="#228833">Through F → ∥</text>
+  <line x1="600" y1="130" x2="630" y2="130" stroke="#f0c000" stroke-width="3.5" opacity="0.85"/>
+  <text x="636" y="134" font-family="sans-serif" font-size="12" fill="#b08000">Light path</text>
+
+  <!-- Title -->
+  <text x="400" y="22" font-family="sans-serif" font-size="14" fill="#444"
+        text-anchor="middle" font-weight="bold">
+    Ray diagram — converging thin lens
+  </text>
+</svg>

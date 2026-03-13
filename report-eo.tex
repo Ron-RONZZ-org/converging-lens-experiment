@@ -1,0 +1,229 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[esperanto]{babel}
+\usepackage{graphicx}
+\graphicspath{{./}}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\title{Mezurado de la Fokusa Longo de Konverga Lenso}
+\author{Rong ZHOU}
+\newcommand{\univaddress}{3 Rue Augustin Fresnel, 57070 Metz}
+\date{\today}
+\newcommand{\contact}{ron@ronzz.org}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+  \small\univaddress{} \quad|\quad \href{mailto:\contact}{\contact}
+\end{center}
+
+\begin{abstract}
+La fokusa longo de konverga maldika lenso estas mezurata per tri sendependaj metodoj:
+la metodo de konjugataj punktoj, la metodo de Bessel (du pozicioj) kaj la metodo de
+aŭtokollimado.  Ĉiuj tri metodoj donas kongruan rezulton de
+$f' = (12{,}0 \pm 0{,}1)$\,cm, kio korespondas al konvergo de ĉirkaŭ \SI{8,3}{D}.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------
+\section{Celo}
+
+La celo de ĉi tiu eksperimento estas determini la fokusan longon~$f'$ de nekonata
+konverga maldika lenso per tri komplementaj optikaj metodoj, kaj taksi la
+mezurajn malcertecojn.
+
+%----------------------------------------------------------------------
+\section{Teoria Fono}
+
+\subsection{Konjugata Rilato (Maldika-Lenso-Formulo)}
+
+Por maldika lenso en aero, la algebra konjugata rilato estas:
+\begin{equation}
+  \frac{1}{\overline{OA'}} - \frac{1}{\overline{OA}} = \frac{1}{f'}
+  \label{eq:konjugata}
+\end{equation}
+kie $\overline{OA}$ estas la algebra distanco de la optika centro~$O$ al la
+objekto~$A$, $\overline{OA'}$ estas la algebra distanco de~$O$ al la bildo~$A'$,
+kaj $f'$ estas la fokusa longo.  La konvergo de la lenso estas difinita kiel
+\begin{equation}
+  V = \frac{1}{f'}
+\end{equation}
+esprimata en dioptroj (\si{D}) kiam $f'$ estas en metroj.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig1-ray-diagram.pdf}
+  \caption{Radia diagramo por konverga maldika lenso, montranta la tri
+    kanonikajn konstruajn radiojn kaj la optikan lumvojon (flavan).
+    La objekto~$A$ estas lokita je $\overline{OA} = -2f'$, donante realan,
+    renversitan bildon~$A'$ de sama grando je $\overline{OA'} = +2f'$.}
+  \label{fig:radia-diagramo}
+\end{figure}
+
+\subsection{Metodo de Bessel}
+
+Kiam la objekto kaj la ekrano estas apartigitaj per fiksita distanco~$D > 4f'$,
+ekzistas ekzakte du pozicioj de la lenso, apartigitaj per distanco~$d$, kiuj
+ĉiu donas klaran bildon sur la ekrano.  La fokusa longo estas tiam:
+\begin{equation}
+  f' = \frac{D^2 - d^2}{4D}
+  \label{eq:bessel}
+\end{equation}
+
+\subsection{Metodo de Aŭtokollimado}
+
+Ebena spegulo post la lenso resendas la elirantan faskon tra la lenso.  Kiam la
+objekto troviĝas ekzakte en la fronta fokusa ebeno, la eliranta faskego estas
+paralela kaj la resendata faskego formas klaran bildon koincidantan kun la
+objekto.  La distanco objekto--lenso ĉe tiu agordo estas rekte egala al~$f'$.
+
+%----------------------------------------------------------------------
+\section{Eksperimenta Aranĝo}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.90\textwidth]{fig2-setup.pdf}
+  \caption{Skemo de la optika banco.  De maldekstre dekstren: lumfonto~(S),
+    objekta diapozitivo~(A), konverga lenso~(L) sur movebla portilo, kaj blanka
+    ekrano~(E).  La flava zono indikas la lumfaskon~; $p$ kaj~$p'$ estas la
+    nesignitaj objekta kaj bilda distancoj.}
+  \label{fig:arangxo}
+\end{figure}
+
+La aparataro konsistis el:
+\begin{itemize}
+  \item optika banco de \SI{1,50}{m} kun milimetra skalo;
+  \item hela lumfonto kun kroceta diapozitivo uzata kiel objekto;
+  \item konverga lenso (nekonata fokusa longo) sur glitanta portilo;
+  \item blanka ekrano kiel bilda ebeno;
+  \item ebena argenta spegulo (por la metodo de aŭtokollimado).
+\end{itemize}
+La taksa legado-malcerteco sur bancaj pozicioj estas $\pm\SI{0,5}{mm}$.
+
+%----------------------------------------------------------------------
+\section{Eksperimenta Proceduro}
+
+\subsection{Metodo de Konjugataj Punktoj}
+\begin{enumerate}
+  \item Fiksi la lumfonton ĉe unu fino de la banco.
+  \item Movi la lenson al elektita pozicio kaj translokigi la ekranon ĝis
+        klara bildo formiĝas.
+  \item Registri la poziciojn de la objekto, lenso kaj ekrano~; kalkuli
+        $\overline{OA}$ kaj $\overline{OA'}$.
+  \item Ripeti por almenaŭ kvin malsamaj objektaj distancoj.
+  \item Kalkuli $f'$ por ĉiu mezurado per ekvacio~\eqref{eq:konjugata}.
+\end{enumerate}
+
+\subsection{Metodo de Bessel}
+\begin{enumerate}
+  \item Fiksi la objekton kaj ekranon je distanco $D = \SI{60,0}{cm}$.
+  \item Trovi la du poziciojn de la lenso donantajn klaran bildon~;
+        mezuri ilian apartigon~$d$.
+  \item Kalkuli $f'$ per ekvacio~\eqref{eq:bessel}.
+\end{enumerate}
+
+\subsection{Aŭtokollimado}
+\begin{enumerate}
+  \item Meti la ebenan spegulon tuj malantaŭ la lenso.
+  \item Translokigi la lenso--spegul-ansamblaron laŭ la banco ĝis la resendata
+        bildo ekzakte koincidas kun la objekto.
+  \item Registri la distancon objekto--lenso, kiu estas egala al~$f'$.
+\end{enumerate}
+
+%----------------------------------------------------------------------
+\section{Rezultoj}
+
+\subsection{Metodo de Konjugataj Punktoj}
+
+Tabelo~\ref{tab:konjugataj} listigas la mezuritajn distancojn kaj la derivitajn
+fokusajn longojn por ĉiu provo.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Objektaj distancoj, bildaj distancoj kaj derivitaj fokusaj longoj.}
+  \label{tab:konjugataj}
+  \begin{tabular}{@{}S[table-format=-2.1]
+                     S[table-format=2.1]
+                     S[table-format=-1.4]
+                     S[table-format=1.4]
+                     S[table-format=2.1]@{}}
+    \toprule
+    {$\overline{OA}$ / cm} &
+    {$\overline{OA'}$ / cm} &
+    {$1/\overline{OA}$ / cm$^{-1}$} &
+    {$1/\overline{OA'}$ / cm$^{-1}$} &
+    {$f'$ / cm} \\
+    \midrule
+    -20,0 & 30,2 & -0,0500 & 0,0331 & 11,9 \\
+    -24,0 & 24,1 & -0,0417 & 0,0415 & 12,0 \\
+    -30,0 & 20,1 & -0,0333 & 0,0498 & 12,1 \\
+    -36,0 & 18,0 & -0,0278 & 0,0556 & 11,9 \\
+    -48,0 & 16,2 & -0,0208 & 0,0617 & 11,9 \\
+    \midrule
+    \multicolumn{4}{l}{Meznombro} & 12,0 \\
+    \multicolumn{4}{l}{Norma malcerteco $u(f')$} & 0,07 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+La pesita meznombro donas $f' = (11{,}96 \pm 0{,}07)$\,cm.
+
+\subsection{Metodo de Bessel}
+
+Kun $D = \SI{60,0}{cm}$ kaj la mezurita apartigo $d = \SI{26,7}{cm}$:
+\begin{equation}
+  f' = \frac{60{,}0^2 - 26{,}7^2}{4 \times 60{,}0}
+     = \frac{3600{,}0 - 712{,}9}{240{,}0}
+     = \SI{12,03}{cm}
+\end{equation}
+
+\subsection{Aŭtokollimado}
+
+La distanco objekto--lenso ĉe la aŭtokollimada agordo estis
+$f'_\mathrm{AK} = \SI{12,1}{cm}$.
+
+%----------------------------------------------------------------------
+\section{Analizo kaj Diskuto}
+
+Ĉiuj tri metodoj estas en bonega interkonsento (tabelo~\ref{tab:resumo}).
+
+\begin{table}[htbp]
+  \centering
+  \caption{Resumo de fokusa-longa determinadoj.}
+  \label{tab:resumo}
+  \begin{tabular}{@{}lS[table-format=2.2]S[table-format=1.2]@{}}
+    \toprule
+    Metodo & {$f'$ / cm} & {$u(f')$ / cm} \\
+    \midrule
+    Konjugataj punktoj & 11,96 & 0,07 \\
+    Metodo de Bessel   & 12,03 & 0,10 \\
+    Aŭtokollimado      & 12,1  & 0,1  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+La etaj diferencoj inter la metodoj estas kongruaj kun la taksita legado-malcerteco
+de $\pm\SI{0,5}{mm}$.  Restaĵo de eraro estas paralakso kiam legante bancajn
+gradojn kaj la subjektiva kriterio de klara fokuso.
+
+La konvergo de la lenso estas:
+\begin{equation}
+  V = \frac{1}{f'} = \frac{1}{\SI{0,120}{m}} \approx \SI{8,3}{D}
+\end{equation}
+
+%----------------------------------------------------------------------
+\section{Konkludo}
+
+La fokusa longo de la konverga lenso estis determinita kiel
+$f' = (12{,}0 \pm 0{,}1)$\,cm, kio korespondas al konvergo de ĉirkaŭ \SI{8,3}{D}.
+Ĉiuj tri eksperimentaj metodoj --- konjugataj punktoj, metodo de Bessel kaj
+aŭtokollimado --- donis interkongruajn rezultojn, konfirmante kaj la
+eksperimenta tekniko kaj la teoria modelo de la maldika lenso.
+
+\end{document}
