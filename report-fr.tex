@@ -8,6 +8,7 @@
 \usepackage{amsmath}
 \usepackage{siunitx}
 \usepackage{adjustbox}
+\usepackage{float}
 \title{Rapport TP2 : Lentilles minces convergentes}
 \author{Rong ZHOU}
 \newcommand{\univaddress}{3 Rue Augustin Fresnel, 57070 Metz}
@@ -29,7 +30,7 @@ Ce TP a pour objectif de mesurer expérimentalement la distance focale d'une len
 
 Pour ce TP, nous disposons d'un banc optique gradué (1), de trois porte-lentilles coulissants (2), d'une source lumineuse (3), d'un miroir (4), d'un verre quadrillé avec son support coulissant et son cadre d'écran de projection amovible (5), d'un écran de projection (6) et d'une lentille convergente supplémentaire (7), en plus de la lentille optique convergente (8) au centre de notre étude.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{guiderail-autocollimation-setup-crop.pdf}
   \caption{Banc optique et montage d'autocollimation.}
@@ -45,7 +46,7 @@ Nous commençons l'expérience par une estimation grossière de la distance foca
 
 Nous avons répété la méthode d'autocollimation avec notre banc optique. La lampe placée derrière le verre quadrillé sert de source lumineuse, tandis que l'écran fournit un motif identifiable. La lumière est convergée par la lentille convergente, réfléchie par le miroir, puis reconvergée pour former l'image sur l'écran attaché à la grille. Nous ajustons la grille jusqu'à obtenir une image nette.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{autocollimation-refined-crop.pdf}
   \caption{Montage d'autocollimation affinée sur le banc optique.}
@@ -69,7 +70,7 @@ Pour maximiser la précision, nous répétons la mesure avec 10 valeurs différe
 
 Nous configurons le montage comme suit :
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{real-image-crop.pdf}
   \caption{Montage pour la mesure par conjugaison d'image réelle.}
@@ -99,7 +100,7 @@ Une image virtuelle ne pouvant pas être visualisée directement sur un écran, 
 
 En configurant le montage comme suit, nous ajustons la position de l'objet (grille) (A) à une valeur arbitraire légèrement inférieure à la distance focale (estimée à 205\,mm), puis nous ajustons la seconde lentille convergente jusqu'à obtenir une image nette de la grille sur l'écran.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{virtual-image-1-crop.pdf}
   \caption{Montage pour la mesure par image virtuelle (étape 1 : avec les deux lentilles).}
@@ -107,7 +108,7 @@ En configurant le montage comme suit, nous ajustons la position de l'objet (gril
 
 Ensuite, nous retirons la lentille à mesurer (« 1\textsuperscript{re} lentille ») et déplaçons le miroir jusqu'à obtenir une image nette.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{virtual-image-2-crop.pdf}
   \caption{Montage pour la mesure par image virtuelle (étape 2 : 1\textsuperscript{re} lentille retirée).}
